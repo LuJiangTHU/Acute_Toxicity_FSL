@@ -42,7 +42,7 @@ python train_multimodel.py --config cfg_ToxACoL_4layer_f0.py --num_workers 8
 Correspondingly, the logs produced from experiments, snapshots and the optimal model files will saved into `./experiments/cfg_ToxACoL_4layer_f0`.
 
 
-### Evaluating
+## Evaluating
 After trained using 5 cross-validation folds, you can use the `consensus_evaluation.py` to evaluate the final averaged  performance on 5 cross-validation folds:
 ```sh
 python consensus_evaluation.py
