@@ -76,7 +76,7 @@ def split_train_test_data(all_feature_file_name = ALL_FEATURE_PATH,
     print(f'--- training set scale：{trn_df.shape}')
     print(f'--- testing set scale：{tst_df.shape}')
 
-    # 写到新文件
+    # write them to new .txt files
     trn_df.to_csv(out_trn_split_file_name, index=False)
     tst_df.to_csv(out_tst_split_file_name, index=False)
 
