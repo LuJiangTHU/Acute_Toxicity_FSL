@@ -97,4 +97,4 @@ end_time = time.time()
 
 elaspsed_time = end_time - start_time
 
-print(f'training time on all models：{elaspsed_time} seconds。')
+print(f'training time on all models：{elaspsed_time} seconds.')
