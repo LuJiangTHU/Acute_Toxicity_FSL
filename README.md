@@ -31,7 +31,7 @@ The molecular fingerprints or feature descripors of the 80,081 compounds, such a
 The acute toxicity dataset was randomly divided 5 times. The specific data splits were provided in the folder `./data/random split/`, which were strictly consistent with the other baseline methods to ensure comparison fairness.
 
 ## Training
-The `./config/cfg_ToxACoL_xx.py` can be used to control the training configurations including the network architecture, train/test fold files, type of molecular fingerprints, optimizer parameters, and random seeds, etc. 
+The `./config/cfg_ToxACoL_xx.py` can be used to control the training or testing configurations including the network architecture, train/test fold files, type of molecular fingerprints, optimizer parameters, and random seeds, etc. 
 
 In this repository, we gave 5 examples of cfg files, `cfg_ToxACoL_4layer_f0.py`, `cfg_ToxACoL_4layer_f1.py`, `cfg_ToxACoL_4layer_f2.py`, `cfg_ToxACoL_4layer_f3.py`, and `cfg_ToxACoL_4layer_f4.py`. The 4-layer ToxACoL is the main model we adopted in this study. `f0-f4` represent the 5-fold cross-validation experiments.
 
