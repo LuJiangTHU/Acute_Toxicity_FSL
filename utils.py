@@ -8,7 +8,6 @@ import torchnet as tnt
 from scipy.stats import pearsonr
 
 TARGET_PATH = './data/dataset.txt'
-FEATURE_PATH = './data/avalon_bits.txt'
 ALL_FEATURE_PATH = './data/all_descriptors.txt'
 TRN_SPLIT_PATH = './data/random split/train_fold_0.txt'
 TST_SPLIT_PATH = './data/random split/test_fold_0.txt'
@@ -20,8 +19,6 @@ MERGE_DATASET_PATH = os.path.join('./data', SPLIT_DATASET_PATH.split('/')[-1]+'-
 
 if (not os.path.isdir(MERGE_DATASET_PATH)):
     os.mkdir(MERGE_DATASET_PATH)
-# FEATURE_NAME_LIST = ['Avalon', 'Morgan', 'AtomPair', 'NYAN', 'Avalon + NYAN']
-
 
 
 def split_train_test_data(all_feature_file_name = ALL_FEATURE_PATH,
@@ -47,7 +44,6 @@ def split_train_test_data(all_feature_file_name = ALL_FEATURE_PATH,
     if feature_name in ['Avalon', 'Morgan', 'AtomPair']:
         all_feature_df = pd.read_csv(all_feature_file_name, dtype={'RTECS_ID': str})
 
-        # 选取'Avalon', 'Morgan', 'AtomPair'其中之一
         column_name = ['RTECS_ID', ] + [feature_name + '_Bit ' + str(i) for i in range(1, 1025)]
         feature_df = all_feature_df[column_name]
     elif feature_name == 'Avalon + NYAN':
