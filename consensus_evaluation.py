@@ -110,21 +110,21 @@ data_train_opt = config['data_train_opt']
 dataset_train = ToxicityDataset(phase='train', dataset_file=train_fold_file)
 tar_mask_trn = dataset_train[0:][2]
 
-num_measurements_trn = []
-num_measurements_tst = []
-for i in range(59):
-    num_measurements_trn.append(torch.nonzero(tar_mask_trn[:, i]).squeeze().shape[0])
-    num_measurements_tst.append(torch.nonzero(tar_mask_tst[:, i]).squeeze().shape[0])
-
-num_each_endpoint = np.array(num_measurements_trn) + np.array(num_measurements_tst)
+# num_measurements_trn = []
+# num_measurements_tst = []
+# for i in range(59):
+#     num_measurements_trn.append(torch.nonzero(tar_mask_trn[:, i]).squeeze().shape[0])
+#     num_measurements_tst.append(torch.nonzero(tar_mask_tst[:, i]).squeeze().shape[0])
+#
+# num_each_endpoint = np.array(num_measurements_trn) + np.array(num_measurements_tst)
 
 # save the performance into .csv
 with open('./table_results/ToxACoL.csv', 'w', newline='') as file:
     writer = csv.writer(file)
-    header = ['Endpoint', 'number of measurements', 'RMSE', 'RMSE_std', 'R2', 'R2_std']
+    header = ['Endpoint', 'RMSE', 'RMSE_std', 'R2', 'R2_std']
     writer.writerow(header)
     for i, endpoint in enumerate(endpoint_name_list):
-        writer.writerow([endpoint] + [num_each_endpoint[i]] + [RMSE_5CV[i], RMSE_5CV_std[i], R2_5CV[i], R2_5CV_std[i]])
-    writer.writerow(['Avg.', num_each_endpoint.sum(), RMSE_avg_5CV, RMSE_avg_5CV_std, R2_avg_5CV, R2_avg_5CV_std])
+        writer.writerow([endpoint] + [RMSE_5CV[i], RMSE_5CV_std[i], R2_5CV[i], R2_5CV_std[i]])
+    writer.writerow(['Avg.',  RMSE_avg_5CV, RMSE_avg_5CV_std, R2_avg_5CV, R2_avg_5CV_std])
 
 print('The results have been saved to ./table_results/ToxACoL.csv')
