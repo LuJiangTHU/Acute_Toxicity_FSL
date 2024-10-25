@@ -110,13 +110,8 @@ data_train_opt = config['data_train_opt']
 dataset_train = ToxicityDataset(phase='train', dataset_file=train_fold_file)
 tar_mask_trn = dataset_train[0:][2]
 
-# num_measurements_trn = []
-# num_measurements_tst = []
-# for i in range(59):
-#     num_measurements_trn.append(torch.nonzero(tar_mask_trn[:, i]).squeeze().shape[0])
-#     num_measurements_tst.append(torch.nonzero(tar_mask_tst[:, i]).squeeze().shape[0])
-#
-# num_each_endpoint = np.array(num_measurements_trn) + np.array(num_measurements_tst)
+if (not os.path.isdir('./table_results')):
+    os.mkdir('./table_results')
 
 # save the performance into .csv
 with open('./table_results/ToxACoL.csv', 'w', newline='') as file:
