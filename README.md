@@ -37,7 +37,7 @@ In this repository, we gave 5 examples of cfg files, `cfg_ToxACoL_4layer_f0.py`,
 
 Using the following command to train your ToxACoL on fold0:
 ```sh
-python train_multimodel.py --config cfg_ToxACoL_4layer_f0.py --num_workers 8
+python train_multimodel.py --config cfg_ToxACoL_4layer_f0 --num_workers 8
 ```
 Correspondingly, the logs produced from experiments, snapshots and the optimal model files will saved into `./experiments/cfg_ToxACoL_4layer_f0`.
 
