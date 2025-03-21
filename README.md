@@ -6,11 +6,10 @@ Chemical safety assessment is critical in the early stages of drug discovery and
 This git repository contains the main source codes of ToxACoL.
 
 ## Code Environment
-Please refer to the `requirments.txt`. Some main tools or libraries and their versions were listed below:
+Please refer to the `requirements.txt`. Some main tools or libraries and their versions were listed below:
 ```
 python==3.10.12
 torch==2.2.1
-torchnet==0.0.4
 pandas==2.2.1
 ```
 
