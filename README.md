@@ -11,6 +11,7 @@ Please refer to the `requirements.txt`. Some main tools or libraries and their v
 python==3.10.12
 torch==2.2.1
 pandas==2.2.1
+rdkit==2024.9.5
 ```
 
 ## Installation
