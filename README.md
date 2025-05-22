@@ -49,7 +49,7 @@ python consensus_evaluation.py
 ```
 The results will be saved as the form of tables and placed under the folder  `./table_results/`. 
 
-## license
-Licensed under the Creative Commons Attribution CC-BY 4.0 license.
+## License
+Licensed under the Creative Commons Attribution CC-BY 4.0.
 
 
